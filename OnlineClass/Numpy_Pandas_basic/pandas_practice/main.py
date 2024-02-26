@@ -47,3 +47,16 @@ if __name__ == "__main__":
     mask2 = (df['age'] > 30) & (df['city'] == 'Paris')
     print(df[mask2])
     print("\n")
+
+    # 排序
+    # 升序排序
+    print(df.sort_values(by='age'))
+    print("\n")
+
+    # 降序排序
+    print(df.sort_values(by='age', ascending=False))
+    print("\n")
+
+    # 按照索引排序
+    print(df.sort_index())
+
