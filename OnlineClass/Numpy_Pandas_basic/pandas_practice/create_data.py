@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def example_seri_data():
+def example_series_data():
     """
     創建一個 Series 物件。
 
@@ -31,5 +31,26 @@ def example_df_data():
     return df
 
 
+def output_csv_file(data, path, file_type="csv") -> bool:
+    """
+    輸出 .csv 檔案
 
+    :param data: 欲儲存的資料。
+    :type data: DataFrame or Series
+    :param path: 欲儲存的路徑。
+    :type path: str
+    :param file_type: 欲儲存的資料類型。
+    :type file_type: str
+    :return: True 資料匯出成功， False 資料匯出失敗
+    :rtype: bool
+    """
+
+    if file_type == "csv":
+        data.to_csv(path + '.csv')
+        return True
+    elif file_type == "xlsx":
+        data.to_excel(path + '.xlsx')
+        return True
+    else:
+        return False
 
