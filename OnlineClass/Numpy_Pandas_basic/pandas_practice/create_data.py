@@ -5,8 +5,8 @@ def example_series_data():
     """
     創建一個 Series 物件。
 
-    :return:
-        Series 物件
+    :return: Series 物件資料。
+    :rtype: Series
     """
     data = [1, 3, 5, 7, 9]
 
@@ -19,8 +19,8 @@ def example_df_data():
     """
     創建一個 DataFrame 物件。
 
-    :return:
-        DataFrame 物件
+    :return: DataFrame 物件資料。
+    :rtype: DataFrame
     """
     data = {'name': ['Alice', 'Bob', 'Charlie', 'David'],
             'age': [25, 32, 18, 47],
