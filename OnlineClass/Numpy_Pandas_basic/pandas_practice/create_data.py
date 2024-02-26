@@ -53,4 +53,3 @@ def output_csv_file(data, path, file_type="csv") -> bool:
         return True
     else:
         return False
-
