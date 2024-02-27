@@ -9,10 +9,14 @@
 Hint : 先安裝 html5lib 解析器
 
 """
-
+import os
 import utils
 
 url = 'https://ani.gamer.com.tw/'  # "巴哈姆特 動漫瘋" 網址
 
 if __name__ == '__main__':
 
+    headers = os.path.join(os.getcwd(), 'header_UA.txt')
+    user_agent = utils.read_headers_ua(headers)
+
+    utils.show_new_anime(url, ua=user_agent)
