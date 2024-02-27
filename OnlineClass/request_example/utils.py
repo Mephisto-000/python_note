@@ -29,13 +29,19 @@ def show_new_anime(url: str, ua: dict) -> None:
 
         for anime_item in anime_items:
             anime_name = anime_item.select_one('.anime-name > p').text.strip()
-            print(f'Name: {anime_name}')
+            print(f'Name: {anime_name}')  # 動畫名字
             anime_watch_number = anime_item.select_one('.anime-watch-number > p').text.strip()
-            print(f'Watch number: {anime_watch_number}  人')
+            print(f'Watch number: {anime_watch_number}  人')  # 觀看人數
             anime_episode = anime_item.select_one('.anime-episode > p').text.strip()
-            print(f'Episode: {anime_episode}')
+            print(f'Episode: {anime_episode}')  # 集數
             anime_href = anime_item.select_one('a.anime-card-block').get('href')
-            print(f'Href: {os.path.join(url, anime_href)}')
+            print(f'url: {os.path.join(url, anime_href)}')  # 影片網址
+            anime_img_url = anime_item.select_one('img.lazyload').get('data-src')
+            print(f'img url: {anime_img_url}')  # 動畫縮圖網址
+            anime_date = str(anime_item.select_one('.anime-date-info').contents[-1]).strip()
+            print(f'Date: {anime_date}')  # 動畫播放日期
+            anime_time = anime_item.select_one('.anime-hours').text.strip()
+            print(anime_time)  # 動畫播放時間
             print('------------------------')
     else:
         print(f'請求失敗: {r.status_code}')
